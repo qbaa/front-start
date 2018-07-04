@@ -1,0 +1,29 @@
+.navigation {
+    line-height: $menu-height;
+    display: none;
+    @include min($medium-min) {
+        display: block;
+    }
+    &__container {
+        padding: 0;
+        margin: 0;
+    }
+    &__item {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        float: left;
+    }
+    &__link {
+        display: block;
+        line-height: $menu-height;
+        padding: 0 20px;
+        font-size: 1.5rem;
+    }
+}
+
+.logo__link {
+     font-size: 2rem;
+     line-height: $menu-height;
+     display: inline-block;
+}

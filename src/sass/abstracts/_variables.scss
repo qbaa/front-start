@@ -1,0 +1,57 @@
+//breakpoints
+
+$small: 576px !default;
+$medium: 768px !default;
+$large: 992px !default;
+$largest: 1280px !default;
+
+$small-min: $small !default;
+$medium-min: $medium !default;
+$large-min: $large !default;
+$largest-min: $largest !default;
+
+$small-max: $medium-min - 1 !default;
+$medium-max: $large-min - 1 !default;
+$large-max: $largest-min - 1 !default;
+
+//grid
+
+$gutter: 30px !default;
+$columns: 12 !default;
+
+$small-container: 540px !default;
+$medium-container: 720px !default;
+$large-container: 960px !default;
+$largest-container: 1140px !default;
+
+//colors
+
+$gray: #FAFAFA;
+$blue: #40C4FF;
+$black: #222;
+$white: #fff;
+
+$bg-color: $gray;
+$link-color: $blue;
+$header-color: $black;
+
+//fonts
+
+$opensans: 'Open Sans', sans-serif;
+
+//menu
+
+$menu-height: 70px;
+
+//menu button
+
+$height-icon: 30px;
+$width-line: 40px;
+$height-line: 5px;
+$line-color: $white;
+
+$transition-time: 0.3s;
+$rotation: 45deg;
+$translateY: ($height-icon / 2);
+$translateX: 0;
+

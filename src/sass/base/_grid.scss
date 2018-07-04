@@ -1,0 +1,64 @@
+%clearfix {
+    *zoom: 1;
+    &:before, 
+    &:after {
+        content: '';
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+*[class^="col"] {
+    float: left;
+    padding-left: $gutter / 2;
+    padding-right: $gutter / 2;
+    width: 100%;
+    min-height: 1px;
+}
+
+.container {
+    margin: 0 auto;
+    width: 100%;
+    padding-left: $gutter / 2;
+    padding-right: $gutter / 2;
+    position: relative;
+    @extend %clearfix;
+    @include min($small-min) {
+        max-width: $small-container;
+    }
+    @include min($medium-min) {
+        max-width: $medium-container;
+    }
+    @include min($large-min) {
+        max-width: $large-container;
+    }
+    @include min($largest-min) {
+        max-width: $largest-container;
+    }
+}
+
+.row {
+    margin-left: -1 * $gutter / 2;
+    margin-right: -1 * $gutter / 2;
+    @extend %clearfix;
+}
+
+$list: (($small-min,'small'), ($medium-min,'medium'), ($large-min,'large'), ($largest-min,'largest'));
+@each $item in $list {
+    @include min(nth($item,1)) {
+        @for $i from 1 through $columns {
+            #{'.col-'+nth($item,2)+'-'+$i} {
+                width: 100% / $columns *$i;
+            }
+            #{'.col-'+nth($item,2)+'-offset-'+$i} {
+                margin-left: 100% / $columns * $i;
+            }
+        }
+    }
+}
+
+
+
+

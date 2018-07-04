@@ -1,0 +1,48 @@
+.menu-button {
+    position: absolute;
+    cursor: pointer;
+    transition: transform $transition-time;
+    background: none;
+    border: 0;
+    outline: none;
+    width: $width-line;
+    height: $height-icon;
+    top: ($menu-height - $height-icon)/2;
+    right: $gutter / 2;
+    padding: 0;
+    display: block;
+    @include min($medium-min) {
+        display: none;
+    }
+    &__line {
+        background: $line-color;
+        display: block;
+        transition: transform $transition-time;
+        position: absolute;
+        width: $width-line;
+        height: $height-line;
+        &--line-1 {
+            top: 0%;
+        }        
+        &--line-2 {
+            top: calc(50% - #{$height-line}/2);
+            transition: opacity $transition-time;
+        }        
+        &--line-3 {
+            top: calc(100% - #{$height-line});
+        }
+    }
+    &--active {
+        .menu-button__line {
+            &--line-1 {
+                transform: translateY($translateY - $height-line) translateX($translateX) rotate($rotation);
+            }
+            &--line-2 {
+                opacity: 0;
+            }            
+            &--line-3 {
+                transform: translateY($translateY * -1) translateX($translateX) rotate($rotation * -1);
+            }
+        }
+    }
+}
